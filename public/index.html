@@ -1,43 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="touch-action: pan-y">
   <head>
     <meta charset="utf-8" />
+
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover"
+    />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>My Data</title>
+    <script type="text/javascript" charset="utf-8">
+      /* test */
+      /* var redirectUrl = location.origin + "/#/oauth/result";
+
+      console.log(location);
+      console.log(location.pathname);
+      console.log(location.search);
+      if (location.pathname === "/oauth/result") {
+        console.log("ㅇ ㅑ호호호호호호호 리다이렉트");
+        location.href = redirectUrl + location.search;
+      }  */
+
+      /* test */
+
+      window._ENV = { ...(window._ENV || {}), ...{ isRootWebView: true } };
+      window.GetMultiWebviewData = (datas) => {
+        window._ENV = { ...(window._ENV || {}), ...{ isRootWebView: false } };
+      };
+      window.pluginBackbutton = () => {};
+      window.pluginResume = () => {};
+      window.pluginPause = () => {};
+      window.pluginPushCallback = (payload) => {
+        console.log("[index.html]에 있는 pushCallback 실행");
+        console.log(`payload:${JSON.stringify(payload)}`);
+        try {
+          if (payload) {
+            window._PUSH = { readyPayload: payload };
+          }
+        } catch (e) {}
+      };
+      window.pluginAppsflyerCallback = (payload) => {
+        console.log("[index.html]에 있는 pluginAppsflyerCallback 실행");
+        console.log(`payload:${JSON.stringify(payload)}`);
+        try {
+          if (payload) {
+            window._ONE_LINK = { readyPayload: payload };
+          }
+        } catch (e) {}
+      };
+
+      convertJsonObj = (obj) => {
+        var dataObj = {};
+        if (obj) {
+          try {
+            if (typeof obj === "string") {
+              dataObj = JSON.parse(obj);
+            } else {
+              dataObj = obj;
+            }
+          } catch (e) {}
+        }
+        return dataObj;
+      };
+
+      window.pluginCallback = (values) => {
+        try {
+          values = convertJsonObj(values) || {};
+          const callback = values.callback;
+          window[callback](values);
+        } catch (e) {}
+      };
+
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N8JZL7X"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
