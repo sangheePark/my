@@ -8,7 +8,8 @@ import {
 import NormalRoute from "@view/route/NormalRoute";
 import React from "react";
 import { RouteComponentProps, Switch, useHistory } from "react-router-dom";
-import ExChart from "./chart/ExChart";
+import ExChart from "@view/examples/chart/ExChart";
+import ExLayer from "./layer/ExLayer";
 
 const ExampleRoute: React.FC<RouteComponentProps> = ({ match }) => {
   const history = useHistory();
@@ -21,25 +22,36 @@ const ExampleRoute: React.FC<RouteComponentProps> = ({ match }) => {
             path={`${match.path}/chart`}
             page={ExChart}
           ></NormalRoute>
-          <MenuList>
-            <MenuItem
-              onClick={() => {
-                history.push(`${match.path}/chart`);
-              }}
-            >
-              <ListItemText>차트</ListItemText>
-            </MenuItem>
-            <MenuItem>
-              <ListItemText>서버 통신</ListItemText>
-            </MenuItem>
-            <MenuItem>
-              <ListItemText>Paste</ListItemText>
-            </MenuItem>
-            <Divider />
-            <MenuItem>
-              <ListItemText>Web Clipboard</ListItemText>
-            </MenuItem>
-          </MenuList>
+          <NormalRoute
+            exact
+            path={`${match.path}/layer`}
+            page={ExLayer}
+          ></NormalRoute>
+          <>
+            <MenuList>
+              <MenuItem
+                onClick={() => {
+                  history.push(`${match.path}/chart`);
+                }}
+              >
+                <ListItemText>차트</ListItemText>
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  history.push(`${match.path}/layer`);
+                }}
+              >
+                <ListItemText>레이어</ListItemText>
+              </MenuItem>
+              <MenuItem>
+                <ListItemText>Paste</ListItemText>
+              </MenuItem>
+              <Divider />
+              <MenuItem>
+                <ListItemText>Web Clipboard</ListItemText>
+              </MenuItem>
+            </MenuList>
+          </>
         </Switch>
       </Container>
     </>

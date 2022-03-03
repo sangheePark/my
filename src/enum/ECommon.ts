@@ -1,7 +1,3 @@
-import EViewMode from "./ViewModeEnum";
-
-export { EViewMode };
-
 export enum EPath {
   ACCESS_TOKEN = "oslc/apitoken/create",
   SESSION = "api/os/zmxapimouser",

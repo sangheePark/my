@@ -1,7 +1,8 @@
-import { EEventType } from "@enum";
+import { Drawer } from "@mui/material";
 import { get, uniqueId } from "lodash";
 import React, { useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { EEventType } from "@enum/ECommon";
 
 export interface ILayerResult<T> {
   eventType: EEventType;

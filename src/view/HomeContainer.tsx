@@ -1,8 +1,8 @@
-import React from 'react'
-import Home from './Home'
+import React from "react";
+import Home from "./Home";
 
 const HomeContainer: React.SFC = (): React.ReactElement => {
-  return <Home></Home>
-}
+  return <Home></Home>;
+};
 
-export default HomeContainer
+export default HomeContainer;
