@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MLogin } from "@model/UserModel";
+import { Box, Container, CssBaseline } from "@mui/material";
 
 export interface ILoginProps {
   value: MLogin;
@@ -24,13 +25,20 @@ const Login: React.FC<ILoginProps> = ({
     } = e;
 
     // console.log('name:' + name)
-    // console.log('value:' + value)
+    console.log("value:" + value);
     setState({
       ...state,
       [name]: value,
     });
   };
-  return <>테스트 화면 1</>;
+  return (
+    <div style={{ display: "flex" }}>
+      <CssBaseline />
+      <Container>
+        <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }} />
+      </Container>
+    </div>
+  );
 };
 
 export default Login;

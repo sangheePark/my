@@ -15,9 +15,12 @@ type RoutePageComponent =
 interface IProps {
   page: RoutePageComponent;
 }
+
+//권한 체크
 const PrivateRoute: React.FC<IProps & RouteProps> = (props) => {
   const Page: RoutePageComponent = props.page;
   const user: MUser = useSelector(userSelector);
+  //TODO 권한 체크 로직은 수정 필요.
   const isLogin = (user: MUser): boolean => {
     return user.id !== "";
   };
