@@ -5,4 +5,4 @@ const ACommonMock = [
   { id: "103", type: "owningDept", text: "조립4팀" },
 ];
 
-export { ACommonMock };
+export default { ACommonMock };

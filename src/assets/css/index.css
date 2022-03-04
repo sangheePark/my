@@ -1,0 +1,33 @@
+* {
+  font-family: "Noto Sans KR", NanumGothic, AppleGothic, sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+div {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+select,
+option,
+input[type="checkbox"],
+label {
+  cursor: pointer;
+}
+
+.layer > .MuiDrawer-paper {
+  width: 100%;
+}

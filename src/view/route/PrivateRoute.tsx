@@ -32,9 +32,7 @@ const PrivateRoute: React.FC<IProps & RouteProps> = (props) => {
         authentication ? (
           <Page {...props} />
         ) : (
-          <Redirect
-            to={{ pathname: "/login", state: { from: props.location } }}
-          />
+          <Redirect to={{ pathname: "/ex", state: { from: props.location } }} />
         )
       }
     />

@@ -11,6 +11,10 @@ import { RouteComponentProps, Switch, useHistory } from "react-router-dom";
 import ExChart from "@view/examples/chart/ExChart";
 import ExLayer from "./layer/ExLayer";
 
+/**
+ * 예제 목록 화면
+ * 기본적은 레이아웃 및 콤포넌트는  https://mui.com/ 사용해서 단순하게 사요.
+ */
 const ExampleRoute: React.FC<RouteComponentProps> = ({ match }) => {
   const history = useHistory();
   return (

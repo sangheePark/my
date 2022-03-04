@@ -4,11 +4,13 @@
     "paths": {
       "@enum/*": ["src/enum/*"],
       "@view/*": ["src/view/*"],
-      "@styles/*": ["src/styles/*"],
+      "@assets/*": ["src/assets/*"],
       "@component/*": ["src/component/*"],
       "@model/*": ["src/model/*"],
       "@module/*": ["src/module/*"],
-      "@mock/*": ["src/mock/*"]
+      "@mock/*": ["src/mock/*"],
+      "@provider/*": ["src/provider/*"],
+      "@service/*": ["src/service/*"]
     }
   }
 }

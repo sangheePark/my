@@ -73,17 +73,22 @@ const LayerPopupProvider = ({ children }: Props) => {
           const newLayers = layers.concat({
             key,
             layer: (
-              <Drawer key={key} open={true} onClose={() => {}}>
-                <div className="App fullscreen">
-                  <ContentComponent
-                    onClose={(eventType: EEventType, value) => {
-                      setLayers(layers.filter((f, i) => f.key !== key));
-                      resolve({ eventType, value });
-                    }}
-                    params={params}
-                    layerId={key}
-                  ></ContentComponent>
-                </div>
+              <Drawer
+                key={key}
+                open={true}
+                onClose={() => {}}
+                className="layer"
+              >
+                {/* <div className="App fullscreen"> */}
+                <ContentComponent
+                  onClose={(eventType: EEventType, value) => {
+                    setLayers(layers.filter((f, i) => f.key !== key));
+                    resolve({ eventType, value });
+                  }}
+                  params={params}
+                  layerId={key}
+                ></ContentComponent>
+                {/* </div> */}
               </Drawer>
             ),
           });
@@ -101,7 +106,6 @@ const LayerPopupProvider = ({ children }: Props) => {
     //전체 닫기
     allClose: () => {
       setLayers([]);
-      history.replace("/login");
     },
     //index이후 레이어 닫기
     indexByCloseNext: (index: number) => {
