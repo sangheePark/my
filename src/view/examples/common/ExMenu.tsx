@@ -1,12 +1,5 @@
-import { EEventType } from "@enum/ECommon";
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { EEventType } from "@enum/CommonEnum";
+import { AppBar, Box, Button, Toolbar } from "@mui/material";
 import React from "react";
 
 interface IProps {

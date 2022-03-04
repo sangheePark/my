@@ -1,4 +1,4 @@
-import { EEventType } from "@enum/ECommon";
+import { EEventType } from "@enum/CommonEnum";
 import {
   Box,
   Button,

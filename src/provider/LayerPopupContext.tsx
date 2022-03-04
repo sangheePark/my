@@ -2,7 +2,7 @@ import { Drawer } from "@mui/material";
 import { get, uniqueId } from "lodash";
 import React, { useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { EEventType } from "@enum/ECommon";
+import { EEventType } from "@enum/CommonEnum";
 
 export interface ILayerResult<T> {
   eventType: EEventType;

@@ -42,8 +42,13 @@
         - model: Data entity
         - module: 
             - action: 전역 상태 action 정의
+                - 파일 네이밍 Action을 접미어로 사용. ex) UserAction
             - reducer:  전역 상태 변경 시 매서드 정의
+                - 파일 네이밍 Reducer를 접미어로 사용. ex) UserReducer
             - routine: 상태 관리 사용시 설정 유틸리티
             - saga: 비동기 상태 관리 처리
-        - service: API 
-        - styles: 
+                - 파일 네이밍 Saga를 접미어로 사용. ex) UserSaga
+        - service: API
+            - 파일 네이밍 Service를 접미어로 사용. ex) UserService
+        - view: 화면 페이지 
+            - 각 폴더 아래 container(상태 관리 및 데이터 관리에 대한 관점) + Presenter(화면 보여지는것에 대한 관점) 구성
